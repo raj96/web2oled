@@ -1,1 +1,1 @@
-web: eval 'bash build-react.sh &" && npm install && npm start
+web: eval "bash build-react.sh &" && npm install && npm start
