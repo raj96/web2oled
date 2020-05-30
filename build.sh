@@ -6,20 +6,18 @@ REACTDIR=$ROOTDIR/ui
 
 mkdir -p $OUTDIR
 
-#Build React App
+#Build React App and move to out directory
 cd $REACTDIR
-npm build
+npm install
+npm run build
 mv build $OUTDIR/ui
 
-#Move Express App files to outdir
-mv $EXPRESSDIR/* $OUTDIR
+#Copy Express App files to outdir
+cp -r $EXPRESSDIR/* $OUTDIR
 
 #Install the package required by Express App
 cd $OUTDIR
 npm install
 
-#Bring backend and frontend together
-mv $REACTDIR .
-
 #Start server
-npm serve
+npm run serve
