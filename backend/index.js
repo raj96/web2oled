@@ -2,6 +2,7 @@ const express = require("express");
 const multer = require("multer");
 const mqtt = require("mqtt");
 const path = require("path");
+const process = require("process");
 
 const img2b64 = require("./img2base64");
 
@@ -10,7 +11,7 @@ const mqttConfig = {
   topic: "bd0a66104e/data",
 };
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const app = express();
 app.use(express.static(path.join(__dirname, "ui")));
