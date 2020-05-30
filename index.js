@@ -14,7 +14,7 @@ const mqttConfig = {
 const PORT = process.env.PORT || 8000;
 
 const app = express();
-app.use(express.static(path.join(__dirname, "ui")));
+app.use(express.static(path.join(__dirname, "ui", "build")));
 const upload = multer({ storage: multer.memoryStorage() });
 
 let imageData =
@@ -26,7 +26,7 @@ mqttClient.on("connect", function () {
 });
 
 app.get("/", (_, res) => {
-  res.sendFile(path.join(__dirname, "ui", "index.html"));
+  res.sendFile(path.join(__dirname, "ui", "build", "index.html"));
 });
 
 app.post("/upload", upload.single("img"), (req, res) => {

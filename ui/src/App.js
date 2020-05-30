@@ -44,7 +44,7 @@ class App extends React.Component {
                   src="/default.png"
                   height="64px"
                   width="128px"
-                  alt="image"
+                  alt="site-logo"
                 />
               </Grid>
               <Grid item>
