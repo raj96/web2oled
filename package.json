@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "./build.sh"
+    "start": "bash build.sh"
   },
   "repository": {
     "type": "git",
