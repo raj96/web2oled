@@ -2,7 +2,13 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 
-import { Input, Grid, Typography, Button } from "@material-ui/core";
+import {
+  Input,
+  Grid,
+  Typography,
+  Button,
+  CircularProgress,
+} from "@material-ui/core";
 
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import FolderIcon from "@material-ui/icons/Folder";
@@ -10,6 +16,7 @@ import FolderIcon from "@material-ui/icons/Folder";
 class App extends React.Component {
   state = {
     selectedFile: undefined,
+    processing: false,
   };
   fileHandler = (e) => {
     this.setState({ selectedFile: e.target.files[0] }, () => {
@@ -18,13 +25,20 @@ class App extends React.Component {
   };
 
   uploadFile = () => {
+    this.setState({ ...this.state, processing: true });
     const formData = new FormData();
     formData.append("img", this.state.selectedFile);
 
     axios
       .post("/upload", formData)
-      .then(() => window.alert("Photo updated on Web2OLED"))
-      .catch(() => window.alert("Uploaded file not an image"));
+      .then(() => {
+        this.setState({ ...this.state, processing: false });
+        window.alert("Photo updated on Web2OLED");
+      })
+      .catch(() => {
+        this.setState({ ...this.state, processing: false });
+        window.alert("Uploaded file not an image");
+      });
   };
 
   render() {
@@ -74,6 +88,11 @@ class App extends React.Component {
                   Upload
                 </Button>
               </Grid>
+              {this.state.processing && (
+                <Grid item>
+                  <CircularProgress />
+                </Grid>
+              )}
             </Grid>
           </Grid>
           <Grid item xs={6}></Grid>
