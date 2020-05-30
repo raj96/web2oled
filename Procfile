@@ -1,3 +1,3 @@
 worker: bash build-react.sh
 worker: bash build-express.sh
-web: cd out && npm install && npm start
+web: sleep 5 && cd out && npm install && npm start
