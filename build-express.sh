@@ -8,6 +8,8 @@ echo "Trying to create ${OUTDIR}"
 mkdir $OUTDIR
 echo "$? return of mkdir"
 
+echo $(ls -al)
+
 cp -r $EXPRESSDIR/* $OUTDIR
 cd $ROOTDIR
 
