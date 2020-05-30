@@ -5,4 +5,3 @@ REACTDIR=$ROOTDIR/ui
 cd $REACTDIR
 npm install
 npm run build
-mv build $ROOTDIR/ui
