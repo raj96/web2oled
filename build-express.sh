@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ROOTDIR=$(pwd)
+OUTDIR=$ROOTDIR/out
+EXPRESSDIR=$ROOTDIR/backend
+
+cp -r $EXPRESSDIR/* $OUTDIR
+cd $OUTDIR

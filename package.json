@@ -2,9 +2,7 @@
   "name": "web-app",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-    "start": "bash build.sh"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raj96/web2oled.git"
