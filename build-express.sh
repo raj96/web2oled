@@ -4,7 +4,9 @@ ROOTDIR=$(pwd)
 OUTDIR=$ROOTDIR/out
 EXPRESSDIR=$ROOTDIR/backend
 
-mkdir -p $OUTDIR
+echo "Trying to create ${OUTDIR}"
+mkdir $OUTDIR
+echo "$? return of mkdir"
 
 cp -r $EXPRESSDIR/* $OUTDIR
 cd $ROOTDIR
