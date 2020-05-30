@@ -4,5 +4,9 @@ ROOTDIR=$(pwd)
 OUTDIR=$ROOTDIR/out
 EXPRESSDIR=$ROOTDIR/backend
 
+mkdir -p $OUTDIR
+
 cp -r $EXPRESSDIR/* $OUTDIR
-cd $OUTDIR
+cd $ROOTDIR
+
+bash build-react.sh
